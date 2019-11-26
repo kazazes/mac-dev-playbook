@@ -8,7 +8,7 @@ configure_osx: yes
 
 dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/repositories/playbook-dotfiles
 dotfiles_files:
   - .zshrc
   - .gitignore
@@ -20,29 +20,23 @@ homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
-  - doxygen
   - gettext
   - gifsicle
   - git
   - go
   - gpg
-  - hub
-  - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
   - nmap
-  - node
-  - nvm
-  - php
   - ssh-copy-id
-  - cowsay
   - readline
   - openssl
   - pv
   - wget
-  - wrk
+  - zsh
+  - git
+  - sed
+  - redis
+  - ffmpeg
+  
 
 homebrew_taps:
   - homebrew/core
@@ -50,23 +44,25 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
   - docker
-  - dropbox
   - firefox
   - google-chrome
-  - handbrake
-  - licecap
-  - macvim
-  - sequel-pro
-  - skitch
   - slack
-  - sublime-text
   - transmit
-  - vagrant
-
+  - iterm2
+  - dash
+  - virtualbox
+  - firefox-developer-edition
+  - graphql-playground
+  - microsoft-office
+  - protonvpn
+  - vlc
+  
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
+mas_installed_apps:
+  - { id: 443987910, name: "1Password" }
+  - { id: 557168941, name: "Tweetbot" }
+  - { id: 497799835, name: "Xcode" }
 mas_email: ""
 mas_password: ""
 
@@ -75,18 +71,13 @@ osx_script: "~/.osx --no-restart"
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
 # installed, eg. through homebrew.
-composer_packages: []
-  # - name: drush
-  #   state: present # present/absent, default: present
-  #   version: "^8.1" # default: N/A
 gem_packages: []
   # - name: bundler
   #   state: present # present/absent/latest, default: present
   #   version: "~> 1.15.1" # default: N/A
-npm_packages: []
-  # - name: webpack
-  #   state: present # present/absent/latest, default: present
-  #   version: "^2.6" # default: N/A
+npm_packages:
+  - name: tldr
+
 pip_packages: []
   # - name: mkdocs
   #   state: present # present/absent/latest, default: present
